@@ -6,10 +6,11 @@ function TodoItem(props) {
         props.PushDeleteTodoButton(props.name);
     }
     return (
-        <div className="pure-g" onClick={ClickItem}>
+        <div className="pure-g">
             <p className='pure-u-1 pure-u-sm-1-6 .center-item-h' >{props.name}</p>
             <div className='pure-u-1 pure-u-sm-1-6'>
                 <button className='pure-button'
+                    onClick={ClickItem}
                     type="button">完了</button>
             </div>
         </div>
