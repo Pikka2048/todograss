@@ -25,16 +25,19 @@ function App() {
       <div>
         {
           TodoList.map((val, key) => <TodoItem name={val}
-           PushDeleteTodoButton={e => PushDeleteTodoButton(e)}></TodoItem>)
+            PushDeleteTodoButton={e => PushDeleteTodoButton(e)}></TodoItem>)
         }
       </div>
       <div className="Add-Todo">
-        <input value={TaskName} onChange={handleChange}
-          type="text"
-          name="example"
-          placeholder="ここにタスクを入力"></input>
-        <button onClick={PushAddTodoButton}
-          type="button">追加</button>
+        <form class="pure-form">
+          <input value={TaskName} onChange={handleChange}
+            type="text"
+            name="example"
+            className='pure-input-1-2'
+            placeholder="ここにタスクを入力"></input>
+          <button className='pure-button pure-button-primary' onClick={PushAddTodoButton}
+            type="button">追加</button>
+        </form>
         <p>{TaskName}</p>
       </div>
 
