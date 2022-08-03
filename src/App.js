@@ -6,7 +6,7 @@ import TodoItem from './TodoItem';
 
 function App() {
   const [TaskName, setTaskName] = useState('')
-  const [TodoList, setTodoList] = useState(['Hello', "Bye"])
+  const [TodoList, setTodoList] = useState(['タスクを追加する'])
 
   const handleChange = (e) => {
     setTaskName(() => e.target.value)
@@ -21,7 +21,19 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>Your Todo</h1>
+
+      <div class="pure-menu pure-menu-horizontal">
+        <a href="#" class="pure-menu-heading pure-menu-link">Todo</a>
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link">About</a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link">Github</a>
+          </li>
+        </ul>
+      </div>
+      <h2>あなたのタスク</h2>
       <div>
         {
           TodoList.map((val, key) => <TodoItem name={val}
@@ -33,7 +45,7 @@ function App() {
           <input value={TaskName} onChange={handleChange}
             type="text"
             name="example"
-            className='pure-input-1-2'
+            className='pure-input-1-4'
             placeholder="ここにタスクを入力"></input>
           <button className='pure-button pure-button-primary' onClick={PushAddTodoButton}
             type="button">追加</button>

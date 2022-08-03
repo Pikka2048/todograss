@@ -1,5 +1,5 @@
 import React, { useState, props } from 'react'
-
+import './CssHelper.css'
 
 function TodoItem(props) {
     function ClickItem() {
@@ -7,8 +7,8 @@ function TodoItem(props) {
     }
     return (
         <div className="pure-g" onClick={ClickItem}>
-            <p className='pure-u-1 pure-u-sm-1-2'>{props.name}</p>
-            <div className='pure-u-1 pure-u-sm-1-2'>
+            <p className='pure-u-1 pure-u-sm-1-6 .center-item-h' >{props.name}</p>
+            <div className='pure-u-1 pure-u-sm-1-6'>
                 <button className='pure-button'
                     type="button">完了</button>
             </div>

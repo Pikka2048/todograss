@@ -1,0 +1,10 @@
+.center-item-h {
+    margin: 0 auto;
+    width: 50%;
+    /* just an arbitrary amount */
+}
+
+.pure-g {
+    display: -flexbox;
+    justify-content: center;
+}
