@@ -14,34 +14,37 @@ function App() {
   function PushAddTodoButton() {
     setTodoList([...TodoList, TaskName])
   }
-  function PushDeleteTodoButton(fig) {
-    setTodoList(
-      TodoList.filter((fruit, index) => (fruit !== fig))
-    )
+  function PushDeleteTodoButton(ref) {
+    var array = [...TodoList];
+    var index = array.indexOf(ref)
+    if (index !== -1) {
+      array.splice(index, 1);
+      setTodoList(array);
+    }
   }
   return (
     <div className="App">
 
-      <div class="pure-menu pure-menu-horizontal">
-        <a href="#" class="pure-menu-heading pure-menu-link">Todo</a>
-        <ul class="pure-menu-list">
-          <li class="pure-menu-item">
-            <a href="#" class="pure-menu-link">About</a>
+      <div className="pure-menu pure-menu-horizontal">
+        <a href="#" className="pure-menu-heading pure-menu-link">Todo</a>
+        <ul className="pure-menu-list">
+          <li className="pure-menu-item">
+            <a href="#" className="pure-menu-link">About</a>
           </li>
-          <li class="pure-menu-item">
-            <a href="#" class="pure-menu-link">Github</a>
+          <li className="pure-menu-item">
+            <a href="#" className="pure-menu-link">Github</a>
           </li>
         </ul>
       </div>
       <h2>あなたのタスク</h2>
       <div>
         {
-          TodoList.map((val, key) => <TodoItem name={val}
-            PushDeleteTodoButton={e => PushDeleteTodoButton(e)}></TodoItem>)
-        }
+          TodoList.map(val => <TodoItem name={val}
+            PushDeleteTodoButton={e => PushDeleteTodoButton(e)}></TodoItem>
+          )}
       </div>
       <div className="Add-Todo">
-        <form class="pure-form">
+        <form className="pure-form">
           <input value={TaskName} onChange={handleChange}
             type="text"
             name="example"
