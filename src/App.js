@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 
-import logo from './logo.svg';
 import './App.css';
 import TodoItem from './TodoItem';
+import Grass from './Grass';
 
 function App() {
   const [TaskName, setTaskName] = useState('')
   const [TodoList, setTodoList] = useState(['タスクを追加する'])
+  const [size, setSize] = useState(0)
 
   const handleChange = (e) => {
     setTaskName(() => e.target.value)
@@ -53,10 +54,10 @@ function App() {
           <button className='pure-button pure-button-primary' onClick={PushAddTodoButton}
             type="button">追加</button>
         </form>
-        <p>{TaskName}</p>
       </div>
-
+      <Grass></Grass>
     </div>
+
   );
 }
 
