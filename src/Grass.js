@@ -1,6 +1,7 @@
 import GrassTile from './GrassTile';
 import React, { useState, props } from 'react'
 
+
 function Grass(props) {
     const data = props.data;
     let list = [];
@@ -10,10 +11,13 @@ function Grass(props) {
         if (i % 7 == 0) {
             col += 18;
             line = 0;
-            console.log("aaa");
         }
         line += 18;
-        list.push(<GrassTile power={data[i][1]} col={col} line={line}></GrassTile>);
+        list.push(<GrassTile
+            power={data[i][1]} col={col}
+            line={line}
+            date={data[i][0]}>
+        </GrassTile>);
     }
     return (
         <div className='GrassRoot'>

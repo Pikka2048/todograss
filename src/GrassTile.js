@@ -1,5 +1,7 @@
 import React, { useState, props } from 'react'
-import Grass from './Grass';
+import Tooltip from './Tooltip';
+
+
 
 function GrassColorByColor(m_power) {
     let power = m_power;
@@ -20,9 +22,14 @@ function GrassColorByColor(m_power) {
 }
 
 function GrassTile(props) {
+    const [show, setShow] = useState(false);
     const SIZE = 16;
     return (
-        <div>
+        <div className="container"
+            onMouseEnter={() => setShow(true)}
+            onMouseLeave={() => setShow(false)}
+        >
+            <Tooltip show={show} content={props.date}></Tooltip>
             <svg width={SIZE} height={SIZE} style={{ position: 'absolute', left: props.col, top: props.line }}>
                 <rect x="0" y="0" width={SIZE} height={SIZE} fill={GrassColorByColor(props.power)} />
             </svg>
