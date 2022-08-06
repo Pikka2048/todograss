@@ -4,16 +4,16 @@ import Grass from './Grass';
 function GrassColorByColor(m_power) {
     let power = m_power;
     if (power <= 0) {
-        return "rgb(20,20,20)";
+        return "rgb(20,40,20)";
     }
     else if (1 <= power && power < 3) {
-        return "rgb(100,20,20)";
+        return "rgb(20, 100, 20)";
     }
     else if (3 <= power && power < 10) {
-        return "rgb(20,200,20)";
+        return "rgb(20,170,20)";
     }
     else if (10 <= power) {
-        return "rgb(20,20,200)";
+        return "rgb(20,240,20)";
     }
     console.log(power);
     return "err";
