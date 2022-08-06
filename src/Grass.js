@@ -3,7 +3,7 @@ import React, { useState, props } from 'react'
 
 function Grass(props) {
     return (
-        <GrassTile power="10" />
+        <GrassTile power="11" />
     );
 }
 
