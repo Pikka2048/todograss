@@ -4,10 +4,23 @@ import './App.css';
 import TodoItem from './TodoItem';
 import Grass from './Grass';
 
+const GrassDate = [
+  ["10/21", 7],
+  ["10/22", 2],
+  ["10/23", 5],
+  ["10/24", 1],
+  ["10/25", 2],
+  ["10/26", 3],
+  ["10/27", 12],
+  ["10/28", 6],
+  ["10/29", 12],
+  ["10/30", 6],
+]
+
 function App() {
   const [TaskName, setTaskName] = useState('')
   const [TodoList, setTodoList] = useState(['タスクを追加する'])
-  const [size, setSize] = useState(0)
+
 
   const handleChange = (e) => {
     setTaskName(() => e.target.value)
@@ -23,6 +36,7 @@ function App() {
       setTodoList(array);
     }
   }
+
   return (
     <div className="App">
 
@@ -55,7 +69,7 @@ function App() {
             type="button">追加</button>
         </form>
       </div>
-      <Grass></Grass>
+      <Grass data={GrassDate}></Grass>
     </div>
 
   );

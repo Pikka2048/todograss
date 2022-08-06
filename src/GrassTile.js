@@ -20,11 +20,11 @@ function GrassColorByColor(m_power) {
 }
 
 function GrassTile(props) {
-
+    const SIZE = 16;
     return (
         <div>
-            <svg width="200" height="150">
-                <rect x="10" y="10" width="16" height="16" fill={GrassColorByColor(props.power)} />
+            <svg width={SIZE} height={SIZE} style={{ position: 'absolute', left: props.col, top: props.line }}>
+                <rect x="0" y="0" width={SIZE} height={SIZE} fill={GrassColorByColor(props.power)} />
             </svg>
         </div>
     );
