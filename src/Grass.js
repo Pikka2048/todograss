@@ -9,10 +9,10 @@ function Grass(props) {
     let line = 0;
     for (let i in data) {
         if (i % 7 == 0) {
-            col += 18;
+            col += 14;
             line = 0;
         }
-        line += 18;
+        line += 14;
         list.push(<GrassTile
             power={data[i][1]} col={col}
             line={line}

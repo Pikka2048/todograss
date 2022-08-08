@@ -23,7 +23,7 @@ function GrassColorByColor(m_power) {
 
 function GrassTile(props) {
     const [show, setShow] = useState(false);
-    const SIZE = 16;
+    const SIZE = 12;
     return (
         <div className="container"
             onMouseEnter={() => setShow(true)}

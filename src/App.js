@@ -4,7 +4,23 @@ import './App.css';
 import TodoItem from './TodoItem';
 import Grass from './Grass';
 
-const GrassDate = [
+function getRandomArbitrary(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.random() * (max - min) + min;
+}
+
+//Now
+const dtStart = new Date();
+let GrassDate = [];
+for (let i = 0; i < 364; i++) {
+  dtStart.setDate(dtStart.getDate() + 1);
+  let set = String(dtStart.getFullYear()) + "/" + String(dtStart.getMonth() + 1) + "/" + String(dtStart.getDate());
+  GrassDate.push([set, getRandomArbitrary(-10, 14)]);
+}
+console.log(GrassDate)
+
+const GrassDate2 = [
   ["10/21", 0],
   ["10/22", 1],
   ["10/23", 2],
@@ -41,7 +57,6 @@ function App() {
 
   return (
     <div className="App">
-
       <div className="pure-menu pure-menu-horizontal">
         <a href="#" className="pure-menu-heading pure-menu-link">Todo</a>
         <ul className="pure-menu-list">
