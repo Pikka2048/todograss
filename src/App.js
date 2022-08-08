@@ -86,7 +86,9 @@ function App() {
             type="button">追加</button>
         </form>
       </div>
-      <Grass data={GrassDate}></Grass>
+      <div className='Grass'>
+        <Grass data={GrassDate}></Grass>
+      </div>
     </div>
 
   );
